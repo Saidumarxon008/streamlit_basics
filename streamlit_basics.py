@@ -125,38 +125,28 @@ import streamlit as st
 # st.session_state.slider = st.slider("Slider", min_value, 100, st.session_state.slider)
 
 #store values
-# if 'checkbox' not in st.session_state:
-#     st.session_state.checkbox = False
+if 'checkbox' not in st.session_state:
+    st.session_state.checkbox = False
 
-# if 'user_input' not in st.session_state:
-#     st.session_state.user_input = ''
-
-# def toggle_input():
-#     st.session_state.checkbox = not st.session_state.checkbox
-
-# st.checkbox(
-#     'Show Input Field',
-#     value=st.session_state.checkbox,
-#     on_change=toggle_input
-# )
-
-# if st.session_state.checkbox:
-#     user_input = st.text_input(
-#         'Enter something:',
-#         value=st.session_state.user_input
-#     )
-#     st.session_state.user_input = user_input
-# else:
-#     user_input = st.session_state.get('user_input', '')
-
-# st.write(f'User Input: {user_input}')
-#gpt way
 if 'user_input' not in st.session_state:
     st.session_state.user_input = ''
 
-st.checkbox('Show Input Field', key='checkbox')
+def toggle_input():
+    st.session_state.checkbox = not st.session_state.checkbox
+
+st.checkbox(
+    'Show Input Field',
+    value=st.session_state.checkbox,
+    on_change=toggle_input
+)
 
 if st.session_state.checkbox:
-    st.text_input('Enter something:', key='user_input')
+    user_input = st.text_input(
+        'Enter something:',
+        value=st.session_state.user_input
+    )
+    st.session_state.user_input = user_input
+else:
+    user_input = st.session_state.get('user_input', '')
 
-st.write(f"User Input: {st.session_state.user_input}")
+st.write(f'User Input: {user_input}')
