@@ -127,4 +127,4 @@ st.session_state.slider = max(
     st.session_state.slider
 )
 
-st.slider("Slider", min_value, 100, key="slider")
+st.slider("Slider", min_value, 100, st.session_state.slider)
