@@ -118,13 +118,13 @@ st.button('Button with tooltip', help='This is a tooltip or popover on hover.')
 
 #advanced widgets
 if "slider" not in st.session_state:
-    st.session_state["slider"] = 25
+    st.session_state.slider = 25
 
 min_value = st.slider("Set min value", 0, 50, 25)
 
-st.session_state["slider"] = max(
+st.session_state.slider = max(
     min_value,
-    st.session_state["slider"]
+    st.session_state.slider
 )
 
 st.slider("Slider", min_value, 100, key="slider")
