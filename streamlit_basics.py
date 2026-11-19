@@ -139,4 +139,4 @@ if st.session_state.checkbox:
 else:
     user_input = st.session_state.get('user_input', '')
 
-st.write(f'User Input:' {user_input})
+st.write(f'User Input: {user_input}')
