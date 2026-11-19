@@ -1,7 +1,7 @@
 from datetime import datetime
 import streamlit as st
 
-basic text
+#basic text
 st.write('Hello World!')
 st.title('Title')
 st.header('Header')
@@ -69,8 +69,8 @@ elif st.session_state.step == 2:
         st.session_state.info = {}
     st.button('Back', on_click=go_to_step_1, )
     
-layouts
-sidebar
+#layouts
+#sidebar
 st.sidebar.title('This is the Sidebar')
 st.sidebar.write('You can put something here')
 sidebar_input = st.sidebar.text_input('Enter something')
@@ -116,7 +116,7 @@ with st.expander('Expand for more details'):
 st.write('Hover over this button for a tooltip')
 st.button('Button with tooltip', help='This is a tooltip or popover on hover.')
 
-advanced widgets
+#advanced widgets
 if "slider" not in st.session_state:
     st.session_state["slider"] = 25
 
