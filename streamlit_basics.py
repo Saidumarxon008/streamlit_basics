@@ -122,9 +122,4 @@ if "slider" not in st.session_state:
 
 min_value = st.slider("Set min value", 0, 50, 25)
 
-st.session_state.slider = max(
-    min_value,
-    st.session_state.slider
-)
-
-st.slider("Slider", min_value, 100, st.session_state.slider)
+st.session_state.slider = st.slider("Slider", min_value, 100, st.session_state.slider)
