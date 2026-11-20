@@ -125,29 +125,77 @@ import streamlit as st
 # st.session_state.slider = st.slider("Slider", min_value, 100, st.session_state.slider)
 
 #store values
+# if 'checkbox' not in st.session_state:
+#     st.session_state.checkbox = False
 
-if 'checkbox' not in st.session_state:
-    st.session_state.checkbox = False
+# if 'user_input' not in st.session_state:
+#     st.session_state.user_input = ''
 
-if 'user_input' not in st.session_state:
-    st.session_state.user_input = ''
+# def toggle_input():
+#     st.session_state.checkbox = not st.session_state.checkbox
 
-def toggle_input():
-    st.session_state.checkbox = not st.session_state.checkbox
+# st.checkbox(
+#     'Show Input Field',
+#     value=st.session_state.checkbox,
+#     on_change=toggle_input
+# )
 
-st.checkbox(
-    'Show Input Field',
-    value=st.session_state.checkbox,
-    on_change=toggle_input
-)
+# if st.session_state.checkbox:
+#     user_input = st.text_input(
+#         'Enter something:',
+#         value=st.session_state.user_input
+#     )
+#     st.session_state.user_input = user_input
+# else:
+#     user_input = st.session_state.get('user_input', '')
 
-if st.session_state.checkbox:
-    user_input = st.text_input(
-        'Enter something:',
-        value=st.session_state.user_input
-    )
-    st.session_state.user_input = user_input
-else:
-    user_input = st.session_state.get('user_input', '')
+# st.write(f'User Input: {user_input}')
 
-st.write(f'User Input: {user_input}')
+
+#caching
+# import time
+# @st.cache_data(ttl=60)
+# def fetch_data():
+#     time.sleep(3)
+#     return {'data': 'This is cached data!'}
+
+# st.write('Fetching data...')
+# data = fetch_data()
+# st.write(data)
+
+#cache resource
+# file_path = 'example.txt'
+
+# @st.cache_resource
+# def get_file_handler():
+#     file = open(file_path, 'a+')
+#     return file
+
+# file_handler = get_file_handler()
+
+# if st.button('Write to File'):
+#     file_handler.write('New line of text\n')
+#     file_handler.flush()
+#     st.success
+
+# if st.button('Read File'):
+#     file_handler.seek(0)
+#     content = file_handler.read()
+#     st.text(content)
+
+# st.button('Close File', on_click=file_handler.close)
+
+#st.rerun
+st.title('Another way for Immediate Rerun')
+
+if 'count' not in st.session_state:
+    st.session_state.count = 0
+
+def increment_and_rerun():
+    st.session_state.count += 1
+    st.rerun()
+
+st.write(f'Current Count: {st.session_state.count}')
+
+if st.button('Increment and Update Immediately'):
+    increment_and_rerun()
