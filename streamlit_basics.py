@@ -227,9 +227,9 @@ import streamlit as st
 # filter_and_file()
 
 #multi_page
-if st.button('Home'):
-    st.switch_page('streamlit_basics.py')
-if st.button('Page 1'):
-    st.switch_page('1_Page1.py')
-if st.button('Page 2'):
-    st.switch_page('2_Page2.py')
+# if st.button('Home'):
+#     st.switch_page('streamlit_basics.py')
+# if st.button('Page 1'):
+#     st.switch_page('1_Page1.py')
+# if st.button('Page 2'):
+#     st.switch_page('2_Page2.py')
